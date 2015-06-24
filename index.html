@@ -14,7 +14,12 @@
 		</md-toolbar>
 		<md-content layout="row" flex>
 	        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
-	          <md-button>Search</md-button>
+	          <md-list>
+				  <md-list-item ng-click="navigateTo(setting.extraScreen, $event)">
+					    <p>Movies</p>
+				  </md-list-item>
+				   <md-divider></md-divider>
+	          </md-list>
 	        </md-sidenav>
 	        <md-content flex layout="column" id="content">
 	            <md-content layout="column" flex class="md-padding">
