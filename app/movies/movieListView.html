@@ -10,7 +10,7 @@
     </md-button>
 	 </div>
 	
-	<md-card class="card" ng-repeat="movie in data.movies | filter : {title:listFilter} | orderBy : 'title'">
+	<md-card flex-sm="100" class="card" ng-repeat="movie in data.movies | filter : {title:listFilter} | orderBy : 'title'">
 		<img ng-show="data.showImage"
                                  ng-src="{{movie.imageurl}}" title="{{movie.title}}" class="md-card-image">
 		<md-card-content class="card-content">
