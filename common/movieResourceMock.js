@@ -97,6 +97,7 @@
 
         // Pass through any requests for html files
         $httpBackend.whenGET(/\.html$/).passThrough();
+        $httpBackend.whenGET("https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg").passThrough();
 		
 	});
 	

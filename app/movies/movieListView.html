@@ -1,16 +1,24 @@
 <div ng-controller="MovieListCtrl as data">
 	 <div layout="" layout-sm="column">
-        <md-input-container>
-            <label>Filter by movie name</label>
-            <input ng-model="listFilter"></input>
-          </md-input-container>
-		  <md-button type="button"
+		 <form name="filterForm">
+	         <md-input-container>
+	            <label>Filter by movie name</label>
+				
+	            	<input required name="listFilter" ng-model="data.listFilter" ng-keypress="data.isValid()"></input>
+	          </md-input-container>
+		  </form>
+		   <span ng-if="filterForm.listFilter.$dirty">
+		         <span ng-messages="filterForm.listFilter.$error">
+		             <span ng-message="required">Movie title is required</span>
+		         </span>
+		     </span>
+	 </div>
+	 <md-button type="button"
             ng-click="data.toggleImage()">
         	Toggle Poster
-    </md-button>
-	 </div>
-	
-	<md-card flex-sm="100" class="card" ng-repeat="movie in data.movies | filter : {title:listFilter} | orderBy : 'title'">
+	</md-button>
+	<br />
+	<md-card flex-sm="100" class="card" ng-repeat="movie in data.movies | filter : {title:data.listFilter} | orderBy : 'title'">
 		<img ng-show="data.showImage"
                                  ng-src="{{movie.imageurl}}" title="{{movie.title}}" class="md-card-image">
 		<md-card-content class="card-content">

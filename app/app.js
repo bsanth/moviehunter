@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 	var app = angular.module("movieHunter",["ngMaterial", "ngRoute", "common.services",
-                                             "movieResourceMock"]);
+                                             "movieResourceMock", "ngMessages"]);
 	
 	app.config(["$routeProvider", 
         function($routeProvider) {

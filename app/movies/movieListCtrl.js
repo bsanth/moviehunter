@@ -26,6 +26,11 @@
                         if (response.data && response.data.exceptionMessage)
                             data.message += response.data.exceptionMessage;
                     });
+                    
+               data.isValid = function () {
+                   debugger
+                   data.message = "Please correct the validation errors and try saving again.";
+               }
 	}
 	
 }());
