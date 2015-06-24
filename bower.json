@@ -1,0 +1,18 @@
+{
+  "name": "moviehunter",
+  "version": "0.0.0",
+  "homepage": "https://github.com/bsanth/moviehunter",
+  "authors": [
+    "Santhosh Kumar Bala Krishnan"
+  ],
+  "description": "AngularU workshop",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
