@@ -6,29 +6,27 @@
 		<link href="css/index.css" rel="stylesheet">
 		<meta name="viewport" content="initial-scale=1" />
 	</head>
-	<body layout="column"  >
+	<body layout="column"  ng-controller="MainCtrl as ctrl">
 		<md-toolbar layout="row">
 			<div class="md-toolbar-tools">
 				Movie Hunter
 			</div>
 		</md-toolbar>
-		<div ng-controller="SideNavCtrl as sidenav">
-			<md-content layout="row" flex>
-			        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
-			          <md-list>
-						  <md-list-item ng-click="sidenav.$location.path('movies')">
-								<p>Movies</p>
-						  </md-list-item>
-						   <md-divider></md-divider>
-			          </md-list>
-			        </md-sidenav>
-			        <md-content flex layout="column" id="content">
-			            <md-content layout="column" flex class="md-padding">
-			            	<ng-include src="'app/movies/movieListView.html'"></ng-include>
-			            </md-content>
-			        </md-content>
-		    </md-content>
-		</div>
+		<md-content layout="row" flex>
+		        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+		          <md-list>
+					  <md-list-item ng-click="ctrl.$location.path('movies')">
+							<p>Movies</p>
+					  </md-list-item>
+					   <md-divider></md-divider>
+		          </md-list>
+		        </md-sidenav>
+		        <md-content flex layout="column" id="content">
+		            <md-content layout="column" flex class="md-padding">
+		            	<ng-include src="'app/movies/movieListView.html'"></ng-include>
+		            </md-content>
+		        </md-content>
+	    </md-content>
 		
 		<!--Library-->
 		<script src="bower_components/angular/angular.js"></script>
@@ -41,7 +39,7 @@
 		
 		<!--App scripts-->
 		<script src="app/app.js"></script>
-		<script src="app/sideNavCtrl.js"></script>
+		<script src="app/mainCtrl.js"></script>
 		<script src="app/movies/movieListCtrl.js"></script>
 	</body>
 </html>

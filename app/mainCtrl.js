@@ -1,8 +1,8 @@
 (function () {
 	angular.module("movieHunter")
-		.controller("SideNavCtrl", ['$location', sideNavCtrl]);
+		.controller("MainCtrl", ['$location', mainCtrl]);
 		
-	function sideNavCtrl($location) {
+	function mainCtrl($location) {
 		var sidenav = this;
 		sidenav.$location = $location;
 	}
