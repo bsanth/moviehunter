@@ -1,4 +1,4 @@
 (function () {
 	'use strict';
-	var app = angular.module("movieHunter",[]);
+	var app = angular.module("movieHunter",['ngMaterial']);
 }());
