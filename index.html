@@ -9,17 +9,20 @@
 	<body layout="column"  ng-controller="MainCtrl as ctrl">
 		<md-toolbar layout="row">
 			<div class="md-toolbar-tools">
-				Movie Hunter
+				<md-button ng-click="ctrl.toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+		          <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+		        </md-button>
+		        <h1>Movie Hunter</h1>
 			</div>
 		</md-toolbar>
 		<md-content layout="row" flex>
 		        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
 		          <md-list>
-					  <md-list-item ng-click="ctrl.$location.path('')">
+					  <md-list-item ng-click="ctrl.navigateTo('')">
 							<p>Home</p>
 					  </md-list-item>
 					  <md-divider></md-divider>
-					  <md-list-item ng-click="ctrl.$location.path('movies')">
+					  <md-list-item ng-click="ctrl.navigateTo('movies')">
 							<p>Movies</p>
 					  </md-list-item>
 					  <md-divider></md-divider>

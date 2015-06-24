@@ -1,12 +1,12 @@
 <div ng-controller="MovieListCtrl as data">
 	 <div layout="" layout-sm="column">
-        <md-input-container style="width:80%">
+        <md-input-container>
             <label>Filter by movie name</label>
             <input ng-model="listFilter"></input>
           </md-input-container>
-		  <md-button  style="width:20%" type="button"
+		  <md-button type="button"
             ng-click="data.toggleImage()">
-        {{data.showImage ? "Hide" : "Show"}} Poster
+        	Toggle Poster
     </md-button>
 	 </div>
 	
