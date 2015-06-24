@@ -1,0 +1,27 @@
+<div ng-controller="MovieListCtrl as data">
+	 <div layout="" layout-sm="column">
+        <md-input-container style="width:80%">
+            <label>Filter by movie name</label>
+            <input ng-model="listFilter"></input>
+          </md-input-container>
+		  <md-button  style="width:20%" type="button"
+            ng-click="data.toggleImage()">
+        {{data.showImage ? "Hide" : "Show"}} Poster
+    </md-button>
+	 </div>
+	
+	<md-card class="card" ng-repeat="movie in data.movies | filter : {title:listFilter} | orderBy : 'title'">
+		<img ng-show="data.showImage"
+                                 ng-src="{{movie.imageurl}}" title="{{movie.title}}" class="md-card-image">
+		<md-card-content>
+			<h4>{{ movie.title}}</h4>
+			<p>{{ movie.director }}</p>
+			<p>{{ movie.releaseDate | date }}</p>
+			<p>{{ movie.mpaa | uppercase}}</p>
+		</md-card-content>
+		<div class="md-actions" layout="row" layout-align="center">
+			<md-button>Edit</md-button>
+			<md-button>More</md-button>
+		</div>
+	</md-card>
+</div>
