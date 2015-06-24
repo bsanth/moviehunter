@@ -2,12 +2,13 @@
 	 <div layout="" layout-sm="column">
 		 <form name="filterForm">
 	         <md-input-container>
-	            <label>Filter by movie name</label>
+	            <label>Filter by movie name (Required)</label>
 				
 	            	<input required name="listFilter" ng-model="data.listFilter" ng-keypress="data.isValid()"></input>
 	          </md-input-container>
 		  </form>
-		   <span ng-if="filterForm.listFilter.$dirty">
+		  &nbsp;&nbsp;&nbsp;
+		   <span ng-if="filterForm.listFilter.$dirty" layout="row" layout-align="center center">
 		         <span ng-messages="filterForm.listFilter.$error">
 		             <span ng-message="required">Movie title is required</span>
 		         </span>
