@@ -12,21 +12,23 @@
 				Movie Hunter
 			</div>
 		</md-toolbar>
-		<md-content layout="row" flex>
-	        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
-	          <md-list>
-				  <md-list-item ng-click="navigateTo(setting.extraScreen, $event)">
-					    <p>Movies</p>
-				  </md-list-item>
-				   <md-divider></md-divider>
-	          </md-list>
-	        </md-sidenav>
-	        <md-content flex layout="column" id="content">
-	            <md-content layout="column" flex class="md-padding">
-	            	<ng-include src="'app/movies/movieListView.html'"></ng-include>
-	            </md-content>
-	        </md-content>
-	    </md-content>
+		<div ng-controller="SideNavCtrl as sidenav">
+			<md-content layout="row" flex>
+			        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+			          <md-list>
+						  <md-list-item ng-click="sidenav.$location.path('movies')">
+								<p>Movies</p>
+						  </md-list-item>
+						   <md-divider></md-divider>
+			          </md-list>
+			        </md-sidenav>
+			        <md-content flex layout="column" id="content">
+			            <md-content layout="column" flex class="md-padding">
+			            	<ng-include src="'app/movies/movieListView.html'"></ng-include>
+			            </md-content>
+			        </md-content>
+		    </md-content>
+		</div>
 		
 		<!--Library-->
 		<script src="bower_components/angular/angular.js"></script>
@@ -35,9 +37,11 @@
 		<script src="bower_components/angular-material/angular-material.min.js"></script>
 		<script src="bower_components/angular-animate/angular-animate.min.js"></script>
 		<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
 		
 		<!--App scripts-->
 		<script src="app/app.js"></script>
+		<script src="app/sideNavCtrl.js"></script>
 		<script src="app/movies/movieListCtrl.js"></script>
 	</body>
 </html>
